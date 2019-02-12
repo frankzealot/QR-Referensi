@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, Alert ,Platform,Linking, ImageBackground } from 'react-native';
+import { Text, View, StyleSheet, Alert ,Platform,Linking,Image, ImageBackground } from 'react-native';
 import { Constants, BarCodeScanner, Permissions } from 'expo';
 
 export default class AssetExample extends Component {
@@ -35,9 +35,9 @@ export default class AssetExample extends Component {
 
   render() {
     return (
+
       <View style={styles.container}>
-      <Text style={[styles.largeText, styles.textStyle]}>UNSIQ QR-SCANNER
-      </Text>
+      <Image style={styles.picture} source={require("../assets/logo.jpg")}/>
       <Text style={[styles.smallText, styles.textStyle]}>Fokus Kamera ke Barcode !
       </Text>
         {this.state.hasCameraPermission === null ?
@@ -46,7 +46,7 @@ export default class AssetExample extends Component {
             <Text>Camera permission is not granted</Text> :
             <BarCodeScanner
               onBarCodeRead={this._handleBarCodeRead}
-              style={{ height: 230, width: 230 }}
+              style={{ height: 300, width: 300 }}
             />
         }
       </View>
@@ -61,22 +61,22 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     paddingTop: Constants.statusBarHeight,
-    backgroundColor: '#3191c3'  
+    marginBottom:150,
+    backgroundColor: "043a54",
   },
   
    textStyle: {
     textAlign: 'center',
     fontFamily: Platform.OS === 'ios' ?  'AvenirNext-Regular' : 'Roboto',
-    color: 'white',
+    color: '#0bd2d4',
 
   },
-
+picture: {
+  width :150,
+  height:150,
+},
   smallText: {
     fontSize: 18,
-    color:'#77d35a',
+    color:'#0bd2d4',
   }, 
-  largeText: {
-    fontSize: 38,
-    color: 'white',
-  },
 });
