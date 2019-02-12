@@ -4,7 +4,7 @@ import { Text, View }from 'react-native';
 import { TabNavigator } from 'react-navigation'; // 1.0.0-beta.22
 // You can import from local files
 import AssetExample from './components/AssetExample';
-import Katalog from './components/Katalog';
+import Scan from './components/Scan';
 import Help from './components/Help';
 // or any pure javascript modules available in npm
 
@@ -19,11 +19,11 @@ const HomeScreen = () => (
 
 const QRScreen = () => (
   <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-    <Katalog/>
+    <Scan/>
   </View>
 );
 const HelpScreen = () => (
-  <View style={{ flex: 1, backgroundColor:'#043a54',alignItems: 'center', justifyContent: 'center' }}>
+  <View style={{ flex: 1, backgroundColor:'White',alignItems: 'center', justifyContent: 'center' }}>
   <Help/>
   </View>
 );
